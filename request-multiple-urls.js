@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-function requestMultipleurls(urls) {
+function fetchUrlContents(urls) {
     const promise = new Promise((resolve, reject) => {
         const multipleurlResponse = [];
         const responsePromises = urls.map(url => axios.get(url));
@@ -22,6 +22,4 @@ function requestMultipleurls(urls) {
     return promise;
 }
 
-module.exports = {
-    requestMultipleurls
-}
+module.exports = fetchUrlContents;
